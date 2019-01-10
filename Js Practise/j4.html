@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style> 
+	span{ color:#030;}
+</style>
+<script>
+	function FormData(){
+		var un = document.getElementById("uname").value;
+		var ue = document.frm.uemail.value;
+		var ua = document.frm.uage.value;
+		var ug = document.frm.ugen.value;
+		alert(un + "\n" + ue + "\n"+ ua + "\n"+ ug );
+		document.getElementById("unamebox").innerHTML=un;
+		document.getElementById("uemailbox").innerHTML=ue;
+		document.getElementById("uagebox").innerHTML=ua;
+		document.getElementById("ugenbox").innerHTML=ug;	
+		}
+</script>
+</head>
+<body>
+
+<form name="frm">
+Name: <input type="text" id="uname" name="uname"><br><br>
+Email: <input type="email" name="uemail"><br><br>
+Age: <input type="number" name="uage"><br><br>
+Gender: &nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" value="male" name="ugen">Male 
+<input type="radio" value="female" name="ugen">Female 
+<br><br>
+<input type="button" value="Test JS" onClick="FormData()">
+</form>
+<br>
+<br>
+<h2>User Name: 	<span id="unamebox"></span></h2>
+<h2>User Email: <span id="uemailbox"></span></h2>
+<h2>User Age: 	<span id="uagebox"></span></h2>
+<h2>User Gender: <span id="ugenbox"></span></h2>
+</body>
+</html>

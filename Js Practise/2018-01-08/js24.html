@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+<body>
+<form>
+  Name:
+  <input type="text">
+  <br>
+  <br>
+  Email:
+  <input type="email">
+  <br>
+  <br>
+  Passwrod:
+  <input type="password">
+  <br>
+  <br>
+  Date of Birth:<br>
+  Day
+  <select>
+    <script>
+for(d=1;d<=31;d++)
+{
+document.write("<option value=" + d + ">" + d + "</option>" );
+}
+</script>
+  </select>
+  Month
+  <select>
+    <script>
+for(m=1;m<=12;m++)
+{
+document.write("<option value=" + m + ">" + m + "</option>" );
+}
+</script>
+  </select>
+  Year
+  <select>
+    <script>
+for(y=1947;y<=2010;y++)
+{
+document.write("<option value=" + y + ">" + y + "</option>" );
+}
+</script>
+  </select>
+</form>
+</body>
+</html>

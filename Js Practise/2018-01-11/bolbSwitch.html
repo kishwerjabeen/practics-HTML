@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+
+<script type="text/javascript">
+
+var img = new Array();
+
+img[1] = new Image();	img[1].src="images/bulboff.png";
+img[0] = new Image();	img[0].src="images/bulbon.png";
+
+
+var a = 0;
+
+function onOff()
+{
+	a = a + 1;
+	
+	if(a>1)
+	{
+		a = 0;
+	}
+	
+	document.im.src=img[a].src;
+}	
+</script>
+</head>
+
+<body>
+<br><br>
+<center>
+<img id="im" name="im" src="images/bulboff.png" width="255" height="408"><br><br>
+
+ 
+<button onClick="onOff()">Switch</button>
+
+</center>
+</body>
+</html>

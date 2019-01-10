@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script type="text/javascript">
+
+var test = 10;
+var t1 = 10==test;
+
+var b1 = true;
+function Hamza(){
+	var a =10;
+	return a*a;
+	}
+
+var bbsclass = ['Fahad','Ali',34,45,test,true,Hamza()];
+console.log(bbsclass);
+
+
+alert(t1);
+
+var a = 0;
+function onOff()
+{
+	a = a + 1;
+	
+	if(a>1)
+	{
+		a = 0;
+	}
+	
+	document.im.src=img[a].src;
+}	
+</script>
+</head>
+
+<body>
+<br><br>
+<center>
+<img id="im" name="im" src="images/bulboff.png" width="255" height="408"><br><br>
+
+ 
+<button onClick="onOff()">Switch</button>
+
+</center>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script type="text/javascript">
+
+var a = 0;
+
+function onOff()
+{
+	if(a==0)
+	{
+		document.getElementById("im").src="images/bulboff.png";
+		a=1;
+	}
+	else
+	{
+		document.getElementById("im").src="images/bulbon.png";
+		a=0;
+	}
+	
+	
+}	
+</script>
+</head>
+
+<body>
+<br><br>
+<center>
+<img id="im" name="im" src="images/bulboff.png" width="255" height="408"><br><br>
+
+ 
+<button onClick="onOff()">Switch</button>
+
+</center>
+</body>
+</html>

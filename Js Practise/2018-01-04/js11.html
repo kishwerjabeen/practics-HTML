@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script>
+function MyCalc()
+{
+	var num1 = eval(document.calcform.n1.value);
+	var num2 = eval(document.calcform.n2.value);
+	var op = document.calcform.opr.value;
+	var res = 0;
+	// Arithmetic operator (+-*/%)
+	if(op=="+")
+	{
+		res = num1+num2;
+	}
+	else if(op=="-")
+	{
+		res = num1-num2;
+	}
+	else if(op=="*")
+	{
+		res = num1*num2;
+	}
+	else if(op=="/")
+	{
+		res = num1/num2;
+	}
+	else if(op=="%")
+	{
+		res = num1%num2;
+	}
+	else
+	{
+		res = "Invalid Operator";
+	}
+	document.getElementById("n1box").innerHTML=num1;
+	document.getElementById("n2box").innerHTML=num2;
+	document.getElementById("opbox").innerHTML=op;
+	document.getElementById("rsbox").innerHTML=res;
+}
+</script>
+</head>
+
+<body>
+<div align="center">
+<form name="calcform">
+<input type="text" name="n1" placeholder="First Number" value="13">
+<br><br>
+
+<input type="text" name="n2" placeholder="Second Number" value="3">
+<br><br>
+
+<input name="opr" type="text" maxlength="1" placeholder="Operator" value="+">
+<br><br>
+ <input type="button" value="Calculate" onClick="MyCalc()">
+</form>
+</div>
+<br>
+<br>
+
+<table width="400" align="center" border="1" cellpadding="4" cellspacing="0">
+	<tr>
+    	<td>Number 1</td>
+        <td id="n1box">&nbsp;</td>
+    </tr>
+    
+	<tr>
+    	<td>Number 2</td>
+        <td id="n2box">&nbsp;</td>
+    </tr>
+    
+	<tr>
+    	<td>Operator</td>
+        <td id="opbox">&nbsp;</td>
+    </tr>
+    <tr>
+    	<td>Result</td>
+        <td id="rsbox">&nbsp;</td>
+    </tr>
+</table>
+
+
+</body>
+</html>

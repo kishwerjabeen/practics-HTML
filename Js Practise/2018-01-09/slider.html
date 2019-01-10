@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+
+<script type="text/javascript">
+
+var img = new Array();
+
+img[0] = new Image();	img[0].src="images/pic1.jpg";
+img[1] = new Image();	img[1].src="images/pic2.jpg";
+img[2] = new Image();	img[2].src="images/pic3.jpg";
+
+
+var a = 0;
+
+function Next()
+{
+	a = a + 1;
+	
+	if(a>2)
+	{
+		a = 0;
+	}
+	
+	document.im.src=img[a].src;
+}
+
+function Prev()
+{
+	a = a - 1;
+	
+	if(a<0)
+	{
+		a = 2;
+	}
+	
+	document.im.src=img[a].src;
+}
+</script>
+</head>
+
+<body>
+<br><br>
+<center>
+<img name="im" src="images/pic1.jpg" height="200px" width="500px"><br><br>
+
+<button onClick="Prev()">Prev</button>
+<button onClick="Next()">Next</button>
+
+</center>
+</body>
+</html>

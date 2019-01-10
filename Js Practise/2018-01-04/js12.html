@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script>
+function MyCalc()
+{
+	var num1 = eval(document.calcform.n1.value);
+	var num2 = eval(document.calcform.n2.value);
+	var op = document.calcform.opr.value;
+	var res = 0;
+			if(op=="+")
+		{
+			res = num1+num2;
+		}
+		else if(op=="-")
+		{
+			res = num1-num2;
+		}
+		else if(op=="*")
+		{
+			res = num1*num2;
+		}
+		else if(op=="/")
+		{
+			res = num1/num2;
+		}
+		else if(op=="%")
+		{
+			res = num1%num2;
+		}
+		else
+		{
+			res = "Invalid Operator";
+		}
+	document.getElementById("hamza").innerHTML= num1 + op + num2 + "=" + res;
+}
+</script>
+</head>
+
+<body>
+<div align="center">
+<form name="calcform">
+<input type="text" name="n1" placeholder="First Number">
+<br><br>
+
+<input type="text" name="n2" placeholder="Second Number">
+<br><br>
+
+<select name="opr">
+	<option value=""></option>
+	<option value="+">Add</option>
+    <option value="-">Sub</option>
+    <option value="*">Mul</option>
+    <option value="/">Div</option>
+    <option value="%">Mod</option>
+</select>
+
+<br><br>
+ <input type="button" value="Calculate" onClick="MyCalc()">
+</form>
+</div>
+<h2 id="hamza"></h2>
+
+
+</body>
+</html>

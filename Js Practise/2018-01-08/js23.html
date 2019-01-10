@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style type="text/css">
+td{
+	text-align:center;
+	}
+</style>
+</head>
+<body>
+
+<script>
+var tbln = eval(prompt("Enter Table Number: "));
+var strn = eval(prompt("Enter Table Starting Number: "));
+var endn = eval(prompt("Enter Table Ending Number: "));
+
+document.write("<table width='300' border='1' cellspacing='0' cellpadding='5' align='center'>");
+
+for(c=strn;c<=endn;c++)
+{
+	document.write("<tr>");
+	document.write("<td>"+tbln+"</td>");
+	document.write("<td>X</td>");
+	document.write("<td>"+c+"</td>");
+	document.write("<td>=</td>");
+	document.write("<td>" + (tbln*c) + "</td>");
+	document.write("</tr>");
+}
+document.write("</table>");
+</script>
+ 
+   
+   
+
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+body{
+	font-size:150%;
+}
+.main-page{
+	width:600px;
+	margin:30px auto;
+	}
+#res-box{
+	background:#FFC;
+	padding:30px;
+	display:none;
+	}
+</style>
+<script>
+function ResultFun()
+{
+	var snm = document.stdform.sname.value;
+	var eng = eval(document.stdform.enum.value);
+	var urd = eval(document.stdform.unum.value);
+	var mth = eval(document.stdform.mnum.value);
+	var tot = eng+urd+mth;
+	var per = Math.round(tot/300*100);
+	var grd = "", rem="";
+	
+// 80> -A1,  70-79  A,   60-69 B,  50-59 C  40-49 D   40 less Fail 
+	//**************************
+	if(per>=80)
+	{
+		grd = "A1";
+		rem="Excellent";
+	}
+	else if(per>=70)
+	{
+		grd = "A";
+		rem="Very Good";
+	}
+	else if(per>=60)
+	{
+		grd = "B";
+		rem="Good";
+	}
+	else if(per>=50)
+	{
+		grd = "C";
+		rem="Fair";
+	}
+	else if(per>=40)
+	{
+		grd = "D";
+		rem="Work Hard";
+	}
+	else
+	{
+		grd = "Fail";
+		rem="Try Again";
+	}
+	//****************************
+	
+	document.getElementById("nmbox").innerHTML=snm;
+	document.getElementById("engbox").innerHTML=eng;
+	document.getElementById("urdbox").innerHTML=urd;
+	document.getElementById("mtbox").innerHTML=mth;
+	document.getElementById("totbox").innerHTML=tot;
+	document.getElementById("perbox").innerHTML=per + "%";
+	document.getElementById("grdbox").innerHTML=grd;
+	document.getElementById("rembox").innerHTML=rem;
+
+	document.getElementById("res-box").style='display:block';
+	document.getElementById("stdform").style="display:none";
+
+}
+
+// AND && , OR ||
+
+function chkNum(obj)
+{
+	var v1 = obj.value;
+	if(v1>100 || v1<0 )
+	{
+		alert("Invalid Number");
+		obj.value="";
+		obj.focus();
+	}
+}
+
+function AgainFun(){
+	document.getElementById("res-box").style='display:none';
+	document.getElementById("stdform").style="display:block";
+	}
+
+</script>
+</head>
+<body>
+<h1>Marksheet</h1>
+<hr>
+<div class="main-page">
+<form name="stdform" id="stdform">
+Name: <input type="text" name="sname"><br><br>
+English: <input type="number" name="enum" onBlur="chkNum(this)"><br><br>
+Urdu: <input type="number" name="unum" onBlur="chkNum(this)"><br><br>
+Maths: <input type="number" name="mnum" onBlur="chkNum(this)"><br><br>
+<input type="button" value="Result" onClick="ResultFun()">
+</form>
+<br><br>
+
+<div id="res-box">
+<table width="100%" border="1" cellspacing="0" cellpadding="7">
+  <tr>
+    <td>Name</td>
+    <td id="nmbox">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>English</td>
+    <td id="engbox">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Urdu</td>
+    <td id="urdbox">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Maths</td>
+    <td id="mtbox">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td id="totbox">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Per</td>
+    <td id="perbox">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Grade</td>
+    <td id="grdbox">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Remarks</td>
+    <td id="rembox">&nbsp;</td>
+  </tr>
+</table>
+<br>
+<br>
+<button onClick="AgainFun()">Again</button>
+</div>
+
+
+</div>
+
+</body>
+</html>
